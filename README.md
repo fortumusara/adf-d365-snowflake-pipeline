@@ -6,6 +6,7 @@ This repository contains an Azure Data Factory (ADF) pipeline setup that transfe
 
 The project is structured as follows:
 
+```plaintext
 adf-d365-snowflake-pipeline/
 ├── ADF/
 │   ├── pipelines/
