@@ -23,40 +23,50 @@ adf-d365-snowflake-pipeline/
 │       └── PipelineParameters.json
 └── README.md
 
-Explanation of Folder Structure:
+📂 Explanation of Folder Structure
+🛠 pipelines/
 
-    pipelines/:
+    Contains the JSON pipeline file:
 
-        Contains the JSON pipeline file, such as Dynamics365ToSnowflakePipeline.json. This file will define the logic, activities, and flow of the data transfer between Dynamics 365 and Snowflake.
+        Dynamics365ToSnowflakePipeline.json → Defines the logic, activities, and flow of the data transfer between Dynamics 365 and Snowflake.
 
-    datasets/:
+📄 datasets/
 
-        Stores Dataset JSON files:
+    Stores Dataset JSON files:
 
-            Dynamics365Dataset.json: Defines the dataset pointing to your Dynamics 365 (Dataverse) data.
+        Dynamics365Dataset.json → Defines the dataset pointing to your Dynamics 365 (Dataverse) data.
 
-            SnowflakeDataset.json: Defines the dataset for Snowflake where the data will be transferred.
+        SnowflakeDataset.json → Defines the dataset for Snowflake where the data will be transferred.
 
-    linkedServices/:
+🔗 linkedServices/
 
-        Stores Linked Services JSON files:
+    Stores Linked Services JSON files:
 
-            Dynamics365LinkedService.json: Defines the connection to your Dynamics 365 (Dataverse).
+        Dynamics365LinkedService.json → Defines the connection to your Dynamics 365 (Dataverse).
 
-            SnowflakeLinkedService.json: Defines the connection to Snowflake.
+        SnowflakeLinkedService.json → Defines the connection to Snowflake.
 
-    triggers/:
+⏰ triggers/
 
-        Stores Trigger JSON files, such as the daily trigger to schedule the pipeline.
+    Stores Trigger JSON files:
 
-    parameters/:
+        DailyTrigger.json → Defines a scheduled trigger to run the pipeline every day at midnight.
 
-        Contains any parameterized JSON files for pipeline variables or configuration (e.g., file paths, table names, etc.).
+⚙️ parameters/
 
-    README.md:
+    Contains any parameterized JSON files for pipeline variables or configuration:
 
-        A README file to explain the purpose of this repository, setup instructions, and how to deploy the pipeline.
+        Examples: file paths, table names, and dynamic settings.
 
+📖 README.md
+
+    Documentation file explaining:
+
+        The purpose of the repository.
+
+        Setup instructions for configuring the pipeline.
+
+        Steps for deployment in Azure Data Factory.
 
 ## 📂 Files Description
 
