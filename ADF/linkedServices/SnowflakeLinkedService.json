@@ -1,0 +1,17 @@
+{
+  "name": "SnowflakeLinkedService",
+  "properties": {
+    "type": "Snowflake",
+    "typeProperties": {
+      "account": "<snowflake-account>",
+      "warehouse": "<warehouse-name>",
+      "database": "<database-name>",
+      "schema": "<schema-name>",
+      "username": "<username>",
+      "password": {
+        "type": "SecureString",
+        "value": "<password>"
+      }
+    }
+  }
+}

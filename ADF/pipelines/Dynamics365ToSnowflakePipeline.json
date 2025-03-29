@@ -1,0 +1,31 @@
+{
+  "name": "Dynamics365ToSnowflakePipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy Data from Dynamics 365 to Snowflake",
+        "type": "Copy",
+        "inputs": [
+          {
+            "referenceName": "Dynamics365Dataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "SnowflakeDataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "typeProperties": {
+          "source": {
+            "type": "ODataSource"
+          },
+          "sink": {
+            "type": "SnowflakeSink"
+          }
+        }
+      }
+    ]
+  }
+}

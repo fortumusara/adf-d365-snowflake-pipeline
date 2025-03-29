@@ -1,0 +1,14 @@
+{
+  "name": "SnowflakeDataset",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "SnowflakeLinkedService",
+      "type": "LinkedServiceReference"
+    },
+    "type": "SnowflakeTable",
+    "typeProperties": {
+      "schema": "<schema-name>",
+      "tableName": "<table-name>"
+    }
+  }
+}

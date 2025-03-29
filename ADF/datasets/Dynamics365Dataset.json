@@ -1,0 +1,13 @@
+{
+  "name": "Dynamics365Dataset",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "Dynamics365LinkedService",
+      "type": "LinkedServiceReference"
+    },
+    "type": "OData",
+    "typeProperties": {
+      "tableName": "<dynamics-table-name>"
+    }
+  }
+}

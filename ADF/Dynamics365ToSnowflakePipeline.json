@@ -1,0 +1,60 @@
+{
+  "name": "Dynamics365ToSnowflakePipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "Get Last Load Timestamp",
+        "type": "Lookup",
+        "linkedServiceName": {
+          "referenceName": "AzureSQLLinkedService",
+          "type": "LinkedServiceReference"
+        },
+        "policy": {
+          "timeout": "00:10:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30
+        },
+        "typeProperties": {
+          "query": "SELECT MAX(ModifiedOn) as LastLoadTimestamp FROM SnowflakeMetadataTable"
+        }
+      },
+      {
+        "name": "Copy Data from Blob to Snowflake",
+        "type": "Copy",
+        "inputs": [
+          {
+            "referenceName": "BlobStorageDataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "SnowflakeDataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "query": "SELECT * FROM BlobStorage WHERE ModifiedOn > @activity('Get Last Load Timestamp').output.firstRow.LastLoadTimestamp"
+          },
+          "sink": {
+            "type": "SnowflakeSink",
+            "preCopyScript": "MERGE INTO TargetTable USING StageTable ON TargetTable.Id = StageTable.Id WHEN MATCHED THEN UPDATE SET ... WHEN NOT MATCHED THEN INSERT ...;"
+          }
+        }
+      }
+    ],
+    "scheduler": {
+      "name": "DailyTrigger",
+      "type": "ScheduleTrigger",
+      "typeProperties": {
+        "recurrence": {
+          "frequency": "Day",
+          "interval": 1,
+          "startTime": "00:00:00Z"
+        }
+      }
+    }
+  }
+}

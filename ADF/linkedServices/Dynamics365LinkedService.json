@@ -1,0 +1,15 @@
+{
+  "name": "Dynamics365LinkedService",
+  "properties": {
+    "type": "OData",
+    "typeProperties": {
+      "url": "<dynamics-365-odata-endpoint>",
+      "authenticationType": "Basic",
+      "username": "<username>",
+      "password": {
+        "type": "SecureString",
+        "value": "<password>"
+      }
+    }
+  }
+}

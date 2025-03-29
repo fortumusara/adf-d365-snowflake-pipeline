@@ -1,0 +1,12 @@
+{
+  "parameters": {
+    "sourceTable": {
+      "type": "String",
+      "defaultValue": "<dynamics-table-name>"
+    },
+    "destinationTable": {
+      "type": "String",
+      "defaultValue": "<snowflake-table-name>"
+    }
+  }
+}
