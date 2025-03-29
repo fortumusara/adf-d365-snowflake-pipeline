@@ -58,22 +58,39 @@ Explanation of Folder Structure:
         A README file to explain the purpose of this repository, setup instructions, and how to deploy the pipeline.
 
 
-## Files Description
+## 📂 Files Description
 
-1. **`Dynamics365ToSnowflakePipeline.json`**: Defines the pipeline that moves data from Dynamics 365 to Snowflake.
-2. **`Dynamics365Dataset.json`**: Dataset for retrieving data from Dynamics 365.
-3. **`SnowflakeDataset.json`**: Dataset for writing data into Snowflake.
-4. **`Dynamics365LinkedService.json`**: Linked service configuration for Dynamics 365 (Dataverse).
-5. **`SnowflakeLinkedService.json`**: Linked service configuration for Snowflake.
-6. **`DailyTrigger.json`**: Defines a scheduled trigger to run the pipeline every day at midnight.
-7. **`PipelineParameters.json`**: Defines parameters that can be used within the pipeline for dynamic configuration.
+1. **`Dynamics365ToSnowflakePipeline.json`**  
+   Defines the pipeline that moves data from Dynamics 365 to Snowflake.
 
-## Setup Instructions
+2. **`Dynamics365Dataset.json`**  
+   Dataset for retrieving data from Dynamics 365.
 
-1. Clone the repository to your local environment:
+3. **`SnowflakeDataset.json`**  
+   Dataset for writing data into Snowflake.
+
+4. **`Dynamics365LinkedService.json`**  
+   Linked service configuration for Dynamics 365 (Dataverse).
+
+5. **`SnowflakeLinkedService.json`**  
+   Linked service configuration for Snowflake.
+
+6. **`DailyTrigger.json`**  
+   Defines a scheduled trigger to run the pipeline every day at midnight.
+
+7. **`PipelineParameters.json`**  
+   Defines parameters that can be used within the pipeline for dynamic configuration.
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repository to your local environment:**  
+   ```sh
+   git clone https://github.com/your-username/adf-d365-snowflake-pipeline.git
 
 2. Navigate to the `ADF` folder:
 
 3. Edit and populate the necessary files using `nano` or your preferred editor.
 
-4. Follow Azure Data Factory deployment steps to import these JSON files and configure the pipeline.
+4. Follow Azure Data Factory deployment steps to import these JSON files and configure the pipeline.**
